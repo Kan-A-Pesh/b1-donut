@@ -167,13 +167,13 @@ const createDonut = () => {
 // ------------------------------
 
 // Multiplier variable
-const multiplierItem = {
+let multiplierItem = {
     price: 20,
     multiplier: 1
 }
 
 // Shop items list (a long list i know)
-const shopItems = [
+let shopItems = [
     {
         name: "Cursor",
         price: 10,
@@ -405,3 +405,39 @@ setInterval(() => {
         scoreElement.innerText = parseScore(score);
     }
 }, 1000);
+
+
+// ------------------------------
+// Save & Load
+// ------------------------------
+const save = () => {
+    localStorage.setItem("save", JSON.stringify({
+        score: score,
+        multiplierItem: multiplierItem,
+        shopItems: shopItems
+    }));
+}
+
+const load = () => {
+    const data = JSON.parse(localStorage.getItem("save"));
+
+    if (data) {
+        score = data.score;
+        multiplierItem = data.multiplierItem;
+        shopItems = data.shopItems;
+
+        scoreElement.innerText = parseScore(score);
+        updateShop();
+    }
+}
+
+// Load at start
+load();
+
+// Save every 10 seconds
+setInterval(save, 10000);
+
+document.querySelector("#erase").addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+});

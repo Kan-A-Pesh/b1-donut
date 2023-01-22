@@ -213,3 +213,15 @@ body {
 .shop .multiplier .name {
     color: #ffb048;
 }
+
+#erase {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #693800;
+    color: #ffa228;
+    font-weight: bolder;
+}
