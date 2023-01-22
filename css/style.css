@@ -25,6 +25,22 @@ body {
     -ms-user-select: none;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #241300;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #995200;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cf6f00;
+}
+
 .donut-container {
     min-width: 50vw;
     min-height: 50vh;
@@ -140,6 +156,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .shop>div {
