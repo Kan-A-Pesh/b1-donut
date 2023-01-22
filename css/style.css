@@ -49,6 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    position: relative;
 }
 
 #donut {
@@ -224,4 +225,10 @@ body {
     background-color: #693800;
     color: #ffa228;
     font-weight: bolder;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
 }
