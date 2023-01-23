@@ -190,13 +190,19 @@ body {
     opacity: .9;
 }
 
-.shop>div button {
+button {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
     background-color: #693800;
     color: #ffa228;
     font-weight: bolder;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d87300;
+    color: #492900;
 }
 
 .shop>div:hover button {
@@ -219,12 +225,38 @@ body {
     position: absolute;
     right: 10px;
     bottom: 10px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #693800;
-    color: #ffa228;
+}
+
+#next-skin {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 16px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    transition: all 0.2s;
+}
+
+#next-skin img {
+    height: 45px;
+    width: 45px;
+}
+
+#next-skin .name {
+    font-size: 16px;
     font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+#next-skin.hidden {
+    opacity: 0;
 }
 
 @media screen and (max-width: 600px) {
